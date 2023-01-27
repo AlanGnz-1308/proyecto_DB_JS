@@ -4,10 +4,10 @@ let servElegido = prompt("Elija y escriba EN MAYÚSCULAS los servicios que desea
 
 function calculo_IUS() {
     if(servElegido=="CONSULTA VERBAL"){
-        return IUS*3
+        return IUS*1
     }
     else if(servElegido=="CONSULTA ESCRITA"){
-        return IUS*1
+        return IUS*3
     }
     else if(servElegido=="CONTRATOS"){
         return IUS*20
