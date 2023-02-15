@@ -1,6 +1,6 @@
 const IUS = 6854
 
-/*
+
 alert("Hola gracias por utilizar el cotizador, te pediremos datos para enviartelo luego por mail")
 
 class UsuarioCotizado {
@@ -32,7 +32,7 @@ let usuario = new UsuarioCotizado (
 )
 
 usuario.validar_edad();
-*/
+
 
 let servElegido = prompt("Elija y escriba EN MAYÚSCULAS los servicios que desea cotizar según el cuadro escribiendo: CONSULTA VERBAL, CONSULTA ESCRITA, CONTRATOS, ASISTENCIA A MEDIACION y luego escriba FINALIZAR: ");
 
