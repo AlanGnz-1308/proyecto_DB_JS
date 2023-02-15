@@ -11,26 +11,26 @@ class UsuarioCotizado {
         this.mail = mail
     }
 
-    validar_Edad(){
-        if(typeof (this.edad) == number && this.edad > 18){
-            alert("Bienvenido:", this.nombre, " a continuación podrá cotizar servicios")
+    validar_edad(){
+        if(typeof (this.edad) == "number" && this.edad > 18){
+            alert("Bienvenido:" + this.nombre + " a continuación podrá cotizar servicios");           
         }
         else{
-            alert("No puedes continuar con la cotización por ser menor de edad, deberá realizarla tu padre/madre y/o tutor")
+            alert("Por ser menor de edad, la cotización deberá realizarla tu padre/madre y/o tutor y le serán enviados a él los documentos al mail que aclares luego:");
+            this.mail = prompt("Introduce nueva dirección de mail:")
+        }
     }
-}
-
-}
+    }
 
 let usuario = new UsuarioCotizado (
     prompt("Escribe tu nombre"),
     prompt("Escribe tu apellido"),
     prompt("Escribe tu cuil"),
-    prompt("Escribe tu edad"),
+    parseInt(prompt("Escribe tu edad")),
     prompt("Escribe tu mail"),
 )
 
-validar_Edad()
+usuario.validar_edad();
 
 let servElegido = prompt("Elija y escriba EN MAYÚSCULAS los servicios que desea cotizar según el cuadro escribiendo: CONSULTA VERBAL, CONSULTA ESCRITA, CONTRATOS, ASISTENCIA A MEDIACION y luego escriba FINALIZAR: ");
 
