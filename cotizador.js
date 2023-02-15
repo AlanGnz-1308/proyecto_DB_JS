@@ -83,13 +83,16 @@ while (servElegido.toUpperCase() != "FINALIZAR") {
     }
 }
     
+array_servicios.pop()
 console.log(array_servicios);
 
 
+alert("Los servicios elegidos fueron: " + array_servicios.join(" - ") + " y arroja una cotización total de: $"+sumaRealizada)
 
-alert("La cotización total es de: $"+sumaRealizada)
-
-if (sumaRealizada > 50000) {
+if(array_servicios.includes("CONTRATOS") == true){
+    alert("Pero como entendemos que la confección de un contrato es costosa, podrá hacerlo en 6 cuotas sin ínteres de: $"+(sumaRealizada/6))
+}
+else if (sumaRealizada > 50000) {
     alert("Como su cotización es mayor a $50.000 usted puede pagar con tarjeta de crédito en 3 cuotas sín interes de: $"+(sumaRealizada/3))
 }
 else if(sumaRealizada < 50000){
