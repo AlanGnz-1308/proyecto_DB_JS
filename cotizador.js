@@ -1,5 +1,6 @@
 const IUS = 6854
 
+/*
 alert("Hola gracias por utilizar el cotizador, te pediremos datos para enviartelo luego por mail")
 
 class UsuarioCotizado {
@@ -31,6 +32,7 @@ let usuario = new UsuarioCotizado (
 )
 
 usuario.validar_edad();
+*/
 
 let servElegido = prompt("Elija y escriba EN MAYÚSCULAS los servicios que desea cotizar según el cuadro escribiendo: CONSULTA VERBAL, CONSULTA ESCRITA, CONTRATOS, ASISTENCIA A MEDIACION y luego escriba FINALIZAR: ");
 
@@ -49,39 +51,41 @@ function calculo_IUS() {
     }
 }
 
-/*
+let sumaRealizada = 0;
+let indice_array = 0;
+let array_servicios = []
 
-{servicio: "CONSULTA VERBAL", multiplicador: 1}
-{servicio: "CONSULTA ESCRITA", multiplicador: 3}
-{servicio: "CONTRATOS", multiplicador: 20}
-{servicio: "ASISTENCIA A MEDIACION", multiplicador: 5}
-
-
-*/
-let sumaRealizada = 0
+array_servicios[0] = servElegido;
 
 while (servElegido.toUpperCase() != "FINALIZAR") {
     if(servElegido=="CONSULTA VERBAL"){
         sumaRealizada = calculo_IUS()+sumaRealizada
         servElegido = prompt("Ingrese otro servicio (puede guiarse con el cuadro) o FINALIZAR para visualizar la cotización")
+        array_servicios[indice_array = indice_array + 1 ] = servElegido;
     }
     else if(servElegido=="CONSULTA ESCRITA"){
         sumaRealizada = calculo_IUS()+sumaRealizada
-        servElegido = prompt("Ingrese otro servicio (puede guiarse con el cuadro) o FINALIZAR para visualizar la cotización")
+        servElegido = prompt("Ingrese otro servicio (puede guiarse con el cuadro) o FINALIZAR para visualizar la cotización");
+        array_servicios[indice_array = indice_array + 1 ] = servElegido;
     }
     else if(servElegido=="CONTRATOS"){
         sumaRealizada = calculo_IUS()+sumaRealizada
-        servElegido = prompt("Ingrese otro servicio (puede guiarse con el cuadro) o FINALIZAR para visualizar la cotización")
+        servElegido = prompt("Ingrese otro servicio (puede guiarse con el cuadro) o FINALIZAR para visualizar la cotización");
+        array_servicios[indice_array = indice_array + 1 ] = servElegido;
     }
     else if(servElegido=="ASISTENCIA A MEDIACION"){
         sumaRealizada = calculo_IUS()+sumaRealizada
-        servElegido = prompt("Ingrese otro servicio (puede guiarse con el cuadro) o FINALIZAR para visualizar la cotización")
+        servElegido = prompt("Ingrese otro servicio (puede guiarse con el cuadro) o FINALIZAR para visualizar la cotización");
+        array_servicios[indice_array = indice_array + 1 ] = servElegido;
     }
     else{
         servElegido = prompt ("recuerde que puede escribir en mayúsculas solamente CONSULTA VERBAL, CONSULTA ESCRITA, CONTRATO, ASISTENCIA A MEDIACION o FINALIZAR")
     }
 }
     
+console.log(array_servicios);
+
+
 
 alert("La cotización total es de: $"+sumaRealizada)
 
@@ -91,3 +95,4 @@ if (sumaRealizada > 50000) {
 else if(sumaRealizada < 50000){
     alert("Como su cotización es menor a $50.000 usted puede pagar en efectivo o con tarjeta de crédito en 3 cuotas CON interés 10% de: $"+((sumaRealizada*0,10)+sumaRealizada/3))
 }
+
