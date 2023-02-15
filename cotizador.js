@@ -1,5 +1,37 @@
 const IUS = 6854
 
+alert("Hola gracias por utilizar el cotizador, te pediremos datos para enviartelo luego por mail")
+
+class UsuarioCotizado {
+    constructor(nombre, apellido, cuil, edad, mail) {
+        this.nombre = nombre
+        this.apellido = apellido
+        this.cuil = cuil
+        this.edad = edad
+        this.mail = mail
+    }
+
+    validar_Edad(){
+        if(typeof (this.edad) == number && this.edad > 18){
+            alert("Bienvenido:", this.nombre, " a continuación podrá cotizar servicios")
+        }
+        else{
+            alert("No puedes continuar con la cotización por ser menor de edad, deberá realizarla tu padre/madre y/o tutor")
+    }
+}
+
+}
+
+let usuario = new UsuarioCotizado (
+    prompt("Escribe tu nombre"),
+    prompt("Escribe tu apellido"),
+    prompt("Escribe tu cuil"),
+    prompt("Escribe tu edad"),
+    prompt("Escribe tu mail"),
+)
+
+validar_Edad()
+
 let servElegido = prompt("Elija y escriba EN MAYÚSCULAS los servicios que desea cotizar según el cuadro escribiendo: CONSULTA VERBAL, CONSULTA ESCRITA, CONTRATOS, ASISTENCIA A MEDIACION y luego escriba FINALIZAR: ");
 
 function calculo_IUS() {
@@ -17,6 +49,15 @@ function calculo_IUS() {
     }
 }
 
+/*
+
+{servicio: "CONSULTA VERBAL", multiplicador: 1}
+{servicio: "CONSULTA ESCRITA", multiplicador: 3}
+{servicio: "CONTRATOS", multiplicador: 20}
+{servicio: "ASISTENCIA A MEDIACION", multiplicador: 5}
+
+
+*/
 let sumaRealizada = 0
 
 while (servElegido.toUpperCase() != "FINALIZAR") {
